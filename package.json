@@ -1,0 +1,35 @@
+{
+  "name": "easycomment",
+  "version": "1.0.0",
+  "description": "easycomment",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack --display-error-details --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamhuo/easycomment.git"
+  },
+  "keywords": [
+    "easycomment"
+  ],
+  "author": "huocs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreamhuo/easycomment/issues"
+  },
+  "homepage": "https://github.com/dreamhuo/easycomment#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.6.7",
+    "webpack": "^4.29.5"
+  }
+}
