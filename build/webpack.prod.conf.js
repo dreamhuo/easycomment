@@ -3,6 +3,7 @@ var baseWebpackConfig = require('./webpack.base.conf');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const path = require("path");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const prodWebpackConfig = merge(baseWebpackConfig, {
     mode: config.build.mode,
@@ -14,6 +15,10 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
         libraryTarget: 'umd'
     },
     plugins: [
+        new CleanWebpackPlugin(path.resolve(__dirname, '../dist'),{
+            root: path.resolve(__dirname, '../'),
+            verbose: true
+        }),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: config.build.mode

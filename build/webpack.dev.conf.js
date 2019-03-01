@@ -18,7 +18,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     },
     devtool: 'inline-source-map',
     plugins: [
-        new CleanWebpackPlugin([path.resolve(__dirname, '../dist')]),
+        new CleanWebpackPlugin(path.resolve(__dirname, '../dist'),{
+            root: path.resolve(__dirname, '../'),
+            verbose: true
+        }),
         new HtmlWebpackPlugin({
             title: '开发环境'
         }),
