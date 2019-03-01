@@ -3,11 +3,18 @@ var baseWebpackConfig = require('./webpack.base.conf');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
     mode: 'production',
     devtool: 'inline-source-map',
     plugins: [
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: '开发环境'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify('production')
@@ -15,7 +22,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         })
     ]
 });
-
 
 const options = {
     contentBase: './dist',
@@ -31,5 +37,5 @@ const compiler = webpack(webpackConfig);
 const server = new webpackDevServer(compiler, options);
 
 server.listen(5000, 'localhost', () => {
-    console.log('dev server listening on port 50000');
+    console.log('dev server listening on port 5000');
 })
