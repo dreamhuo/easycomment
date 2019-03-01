@@ -4,11 +4,11 @@
   "description": "easycomment",
   "main": "dist/easycomment.js",
   "scripts": {
+    "dev": "node build/dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline",
     "build": "webpack --display-error-details --config webpack.config.js",
-    "dev:examples": "node build/dev-examples-server.js",
-    "dev": "node build/dev-server.js"
+    "dev:examples": "node build/dev-examples-server.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "vue-loader": "^15.6.4",
     "vue-template-compiler": "^2.6.7",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }
