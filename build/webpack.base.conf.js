@@ -4,17 +4,9 @@ const webpack = require("webpack");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-    entry: "./src/index.js",
-    mode: process.env.NODE_ENV === 'production'
-            ? config.build.mode
-            : config.dev.mode,
-    devtool: 'inline-source-map',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'easycomment.js',
-        library: 'easycomment',
-        libraryTarget: 'umd'
-    },
+    // mode: process.env.NODE_ENV === 'production'
+    //         ? config.build.mode
+    //         : config.dev.mode,
     module: {
         rules:[
             {
@@ -44,11 +36,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
         new VueLoaderPlugin()
     ]
 }
