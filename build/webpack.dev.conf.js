@@ -8,6 +8,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
     mode: 'production',
+    entry: "./src/index.js",
+    output: {
+        path: path.resolve(__dirname, '../dist'),
+        filename: 'easycomment.js',
+        library: 'easycomment',
+        libraryTarget: 'umd'
+    },
     devtool: 'inline-source-map',
     plugins: [
         new CleanWebpackPlugin(['dist']),
