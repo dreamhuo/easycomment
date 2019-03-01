@@ -10,16 +10,15 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
     mode: 'production',
-    entry: "./src/index.js",
+    entry: path.resolve(__dirname, '../src/index.js'),
     output: {
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist'),
-        filename: 'easycomment.js',
-        library: 'easycomment',
-        libraryTarget: 'umd'
+        publicPath: '/'
     },
     devtool: 'inline-source-map',
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin([path.resolve(__dirname, '../dist')]),
         new HtmlWebpackPlugin({
             title: '开发环境'
         }),
@@ -33,7 +32,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 });
 
 const options = {
-    contentBase: './dist',
+    contentBase: path.resolve(__dirname, '../dist'),
     hot: true,
     host: 'localhost'
 };
