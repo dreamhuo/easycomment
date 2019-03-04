@@ -4,7 +4,7 @@
   "description": "easycomment",
   "main": "dist/easycomment.js",
   "scripts": {
-    "dev": "node build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --color --config build/webpack.dev.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline",
     "build": "node build/webpack.prod.conf.js",
