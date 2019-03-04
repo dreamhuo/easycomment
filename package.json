@@ -23,7 +23,9 @@
     "url": "https://github.com/dreamhuo/easycomment/issues"
   },
   "homepage": "https://github.com/dreamhuo/easycomment#readme",
-  "dependencies": {},
+  "dependencies": {
+    "fastclick": "^1.0.6"
+  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",

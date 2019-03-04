@@ -10,7 +10,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
     mode: 'development',
-    entry: path.resolve(__dirname, '../src/index.js'),
+    entry: {
+       main: path.resolve(__dirname, '../example/main.js')
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist'),
@@ -22,7 +24,9 @@ const webpackConfig = merge(baseWebpackConfig, {
             verbose: true
         }),
         new HtmlWebpackPlugin({
-            title: '开发环境'
+            filename: 'index.html',
+            template: './example/index.html',
+            inject: true
         }),
         new webpack.DefinePlugin({
             "process.env": {
